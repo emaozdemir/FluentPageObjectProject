@@ -11,7 +11,7 @@ public class ContactListPage {
         this.driver = driver;
     }
 
-    public ContactListPage(){//Bu constructor default constructor yerine geçecektir.
+    public ContactListPage() {//Bu constructor default constructor yerine geçecektir.
         //Java'da bir classta constructor oluşturulduğunda default oln yok olur.
         //Bu sebeple paramteresiz constrcutor'ı kullanmak istiyorsanız boş bir constructor oluşturmalısınız.
     }
@@ -23,8 +23,30 @@ public class ContactListPage {
     public By logout = By.id("logout");
 
 
-    public void enterEmail(String email) {
+    public ContactListPage enterEmail(String email) {
         driver.findElement(this.email).sendKeys(email);
+        return this;//Bu classın bir objesini döner. Bu sayede her methodu method chain şeklinde kullanabiliriz.
+    }
+
+    public ContactListPage enterPassword(String password) {
+        driver.findElement(this.password).sendKeys(password);
+        return this;
+    }
+
+    public ContactListPage clickSubmit() {
+        driver.findElement(this.submit).click();
+        return this;
+    }
+
+    public ContactListPage assertLogout() {
+        try {
+            Thread.sleep(300);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        assert driver.findElement(this.logout).isDisplayed();
+
+        return this;
     }
 
 

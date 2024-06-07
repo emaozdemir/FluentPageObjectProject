@@ -28,6 +28,14 @@
             <version>7.9.0</version>
             <scope>test</scope>
         </dependency>
+
+<!--KENDİM-->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+
     </dependencies>
 
 </project>

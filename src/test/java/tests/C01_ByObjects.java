@@ -39,7 +39,7 @@ public class C01_ByObjects {
         Thread.sleep(300);
         assert driver.findElement(contactListPage.logout).isDisplayed();
 
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         driver.quit();
 
     }

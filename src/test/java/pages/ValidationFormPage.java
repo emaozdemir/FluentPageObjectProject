@@ -44,6 +44,7 @@ public class ValidationFormPage {
     public ValidationFormPage chooseCountry(String country) {
         new Select(ParallelDriver.getDriver().findElement(this.country)).deselectByVisibleText(country);
         return this;
+
     }
 
     public ValidationFormPage enterNotes(String notes) {
